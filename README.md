@@ -43,20 +43,20 @@ task2 = task_manager.add_task('complex_computation', {
 ```
 
 ##### Retrieving Task Results:
-- Get task by ID
+Get task by ID
 ```bash
 result = task_manager.get_task(task1.id)
 print(f"Task Status: {result.status}")
 print(f"Task Result: {result.result}")
 ```
 ##### Extending Task Types
-- To add custom task types, modify the ```_execute_task()``` method:
+To add custom task types, modify the ```_execute_task()``` method:
 ```bash
 def _execute_task(self, task_name: str, data: Dict[str, Any]) -> Any:
     if task_name == 'your_custom_task':
         return self._custom_task_handler(data)
 ```
-- Configuration
+Configuration
 ```max_workers```: Configure concurrent worker count
 ```database_path```: Specify custom SQLite database location
 
